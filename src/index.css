@@ -29,3 +29,18 @@ html {
     font-size: 16px;
     font-family: 'Commissioner', sans-serif;
 }
+
+/* header */
+@media (min-width: 991px) {
+  .collapse.navbar-collapse {
+    margin-top: 0 !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .collapse.navbar-collapse ul li a {
+    border: none !important;
+    color: white !important;
+  }
+}
