@@ -100,3 +100,9 @@ html {
 /* .test {
   border:1px solid rgb(182, 181, 181);
 } */
+
+.check {
+  max-width: 700px;
+  height: 400px;
+  margin-top: 15rem;
+}

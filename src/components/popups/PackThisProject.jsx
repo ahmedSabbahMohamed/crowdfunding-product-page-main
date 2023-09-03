@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from "../main/Card"
 import close from "../../assets/images/icon-close-modal.svg"
+import success from "../../assets/images/icon-check.svg"
 
 function PackThisProject() {
 
@@ -22,6 +23,14 @@ function PackThisProject() {
         }
     }
 
+    const hideChooseCard = _ => {
+        let choose = document.querySelector('.choose'),
+        check = document.querySelector('.check')
+        choose.classList.add('d-none')
+        check.classList.remove('d-none')
+
+    }
+
     const hidePopup = _ => {
         let overlay = document.querySelector('.overlay')
         overlay.classList.add('d-none')
@@ -31,7 +40,7 @@ function PackThisProject() {
     <>
     <div className="overlay position-absolute top-0 start-0 w-100 h-100 d-none d-flex justify-content-center" style={{backgroundColor: 'rgba(13, 14, 14, 0.555)'}}>
 
-        <div className='' style={{marginTop: '15rem'}}>
+        <div className='choose' style={{marginTop: '15rem'}}>
         <Card
                 content={<>
                     
@@ -70,12 +79,12 @@ function PackThisProject() {
                                 </div>
                             </div>
                             <p className='p-4 lead fs-6 text-black-50'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure porro praesentium dolor obcaecati similique ducimus autem quos vitae. Earum quibusdam, modi quam consequuntur dolore ducimus sed ullam ab. Excepturi, quo.</p>
-                            <div className='border-top p-4 d-flex d-none flex-column flex-md-row gap-md-2 justify-content-between align-items-center'>
-                                <input className='border-0' placeholder='Enter Your Pledge' type="text" />
+                            <form className='border-top p-4 d-flex d-none flex-column flex-md-row gap-md-2 justify-content-between align-items-center'>
+                                <input required className='border-0' placeholder='Enter Your Pledge' type="text" />
                                 <div className=''>
-                                    <button className='me-md-2 btn btn-outline-primary rounded-pill'>$25</button><button className='btn btn-outline-success rounded-pill'>Continue</button>
+                                    <button className='me-md-2 btn btn-outline-primary rounded-pill'>$25</button><button onClick={hideChooseCard} className='btn btn-outline-success rounded-pill'>Continue</button>
                                 </div>
-                            </div>
+                            </form>
                         </div>
 
                         <div className='rounded radio-card'>
@@ -92,12 +101,12 @@ function PackThisProject() {
                                 </div>
                             </div>
                             <p className='p-4 lead fs-6 text-black-50'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure porro praesentium dolor obcaecati similique ducimus autem quos vitae. Earum quibusdam, modi quam consequuntur dolore ducimus sed ullam ab. Excepturi, quo.</p>
-                            <div className='border-top p-4 d-none d-flex flex-column flex-md-row gap-md-2 justify-content-between align-items-center'>
-                                <input className='border-0' placeholder='Enter Your Pledge' type="text" />
+                            <form className='border-top p-4 d-none d-flex flex-column flex-md-row gap-md-2 justify-content-between align-items-center'>
+                                <input required className='border-0' placeholder='Enter Your Pledge' type="text" />
                                 <div className=''>
-                                    <button className='me-md-2 btn btn-outline-primary rounded-pill'>$75</button><button className='btn btn-outline-success rounded-pill'>Continue</button>
+                                    <button className='me-md-2 btn btn-outline-primary rounded-pill'>$75</button><button onClick={hideChooseCard} className='btn btn-outline-success rounded-pill'>Continue</button>
                                 </div>
-                            </div>
+                            </form>
                         </div>
 
                         <div className='border rounded opacity-25'>
@@ -120,6 +129,19 @@ function PackThisProject() {
 
                 </>}
             />
+        </div>
+
+        <div className="check bg-white d-none rounded p-5 d-flex justify-content-center align-items-center">
+            <div className='text-center'>
+                <img src={ success } alt="checked" />
+                <h2 className="fw-bold text-black fs-4">
+                    Thanks for your support
+                </h2>
+                <p className="lead text-black-50 fs-6">
+                support! Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.
+                </p>
+                <button onClick={hidePopup} className='btn btn-lg btn-outline-success rounded-pill'>Got it!</button>
+            </div>
         </div>
 
     </div>
