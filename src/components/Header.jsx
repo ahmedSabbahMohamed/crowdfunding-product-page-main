@@ -5,6 +5,13 @@ import logo from "../assets/images/logo.svg"
 import menu from "../assets/images/icon-hamburger.svg"
 
 function Header() {
+
+    const showMenu = _ => {
+        let menu = document.querySelector('.navbar-toggler'),
+        hide = document.querySelector('.first-card-container')
+        hide.classList.toggle('invisible')
+    }
+
   return (
     <>
     {/* START HEADER */}
@@ -28,10 +35,10 @@ function Header() {
             <a className="navbar-brand" href="#">
                 <img src={ logo } alt="logo" />
             </a>
-            <button className="navbar-toggler border-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button onClick={showMenu} className="navbar-toggler border-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <img className='navbar-toggler-icon' src={ menu } alt="menu" />
             </button>
-            <div className="collapse navbar-collapse mt-4 bg-white rounded shadow" id="navbarSupportedContent">
+            <div className="collapse hill navbar-collapse mt-4 bg-white rounded shadow" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
 
                 <li className="nav-item">

@@ -31,7 +31,8 @@ html {
 }
 
 /* header */
-@media (min-width: 991px) {
+
+@media (min-width: 992px) {
   .collapse.navbar-collapse {
     margin-top: 0 !important;
     background-color: transparent !important;
@@ -44,3 +45,58 @@ html {
     color: white !important;
   }
 }
+
+.minus-top {
+  top: -8rem;
+}
+
+.my-card {
+  width: 720px;
+}
+
+@media (max-width: 767px) {
+  .minus-top {
+    top: -15rem;
+  }
+
+  .my-card {
+    width: calc(100vw - 2rem) !important;
+    margin: 0 auto;
+  }
+}
+
+.not-allowed:hover {
+  cursor: not-allowed;
+}
+
+.bookmark img,.bookmarked img {
+  left: -10px;
+  top: 0;
+  width: 3rem;
+}
+
+.cyan-btn:hover {
+  background-color: var(--darkCyan) !important;
+}
+
+.border-right {
+  border-right: 1px solid var(--darkGray);
+}
+
+@media (max-width: 767px) {
+  .border-right {
+    border-right: 0;
+  }
+}
+
+.radio-card {
+  border: .5px solid lightgray;
+}
+
+.opacity-25 {
+  cursor: not-allowed;
+}
+
+/* .test {
+  border:1px solid rgb(182, 181, 181);
+} */
